@@ -4,7 +4,7 @@ terraform {
   # State Storage and Locking
   backend s3 {
     region         = "ap-northeast-1"
-    bucket         = "terraform-308890121156.secondgame.net"
+    bucket         = "terraform-814937260541.glaciermelt00"
     key            = "state"
     dynamodb_table = "terraform_lock"
     shared_credentials_file = "$HOME/.aws/credentials"
