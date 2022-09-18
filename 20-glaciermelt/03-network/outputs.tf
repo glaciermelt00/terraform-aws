@@ -31,7 +31,6 @@ output subnet_private_3 {
 }
 
 //-- [ Security Group ] --------------------------------------------------------
-output security_group_default {
-  value = aws_security_group.default.id
+output security_group_default0 {
+  value = aws_security_group.default0.id
 }
-

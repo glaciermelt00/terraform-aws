@@ -9,7 +9,7 @@ resource aws_instance gateway1 {
   monitoring                  = false
   key_name                    = ""
   subnet_id                   = aws_subnet.global_1.id
-  vpc_security_group_ids      = [ aws_security_group.default.id ]
+  vpc_security_group_ids      = [ aws_security_group.default0.id ]
   iam_instance_profile        = data.terraform_remote_state.iam_role.outputs.ec2_common_profile
   associate_public_ip_address = true
   disable_api_termination     = true
