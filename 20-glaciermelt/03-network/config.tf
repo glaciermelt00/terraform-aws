@@ -5,7 +5,7 @@ terraform {
   backend s3 {
     region         = "ap-northeast-1"
     bucket         = "terraform-814937260541.glaciermelt00"
-    key            = "state"
+    key            = "network"
     dynamodb_table = "terraform_lock"
     shared_credentials_file = "$HOME/.aws/credentials"
     profile                 = "glaciermelt00"
