@@ -19,7 +19,7 @@ resource aws_instance nat1 {
   monitoring                  = false
   key_name                    = ""
   subnet_id                   = aws_subnet.global_1.id
-  vpc_security_group_ids      = [ aws_security_group.default0.id ]
+  vpc_security_group_ids      = [ aws_security_group.default.id ]
   associate_public_ip_address = true
   disable_api_termination     = true
   source_dest_check           = false
