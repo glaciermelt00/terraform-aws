@@ -1,10 +1,3 @@
-/*
- * Copyright SecondGame All Rights Reserved.
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
- */
-
 resource aws_sns_topic opensearch_updates {
   name = "opensearch-updates-topic"
 }

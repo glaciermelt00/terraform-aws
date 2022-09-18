@@ -1,10 +1,3 @@
-/*
- * Copyright SecondGame All Rights Reserved.
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
- */
-
 /**
  * RDS Cluster
  */
@@ -12,8 +5,8 @@ resource aws_rds_cluster main {
   cluster_identifier              = "main"
   engine                          = "aurora-mysql"
   engine_version                  = "5.7.mysql_aurora.2.07.3"
-  database_name                   = "agent_one"
-  master_username                 = "secondgame"
+  database_name                   = "glaciermelt"
+  master_username                 = "glaciermelt00"
   master_password                 = "5HBtdCU6UXPL"
   backup_retention_period         = 35
   backtrack_window                = 259200

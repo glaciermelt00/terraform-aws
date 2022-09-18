@@ -1,12 +1,5 @@
-/*
- * Copyright SecondGame All Rights Reserved.
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
- */
-
 resource aws_elasticsearch_domain opensearch {
-  domain_name           = "agent-one-opensearch"
+  domain_name           = "glaciermelt-opensearch"
   elasticsearch_version = "7.10"
 
   cluster_config {
@@ -63,7 +56,7 @@ data aws_iam_policy_document opensearch {
       ]
     }
     resources = [
-      "arn:aws:es:ap-northeast-1:${data.aws_caller_identity.self.account_id}:domain/agent-one-opensearch/*"
+      "arn:aws:es:ap-northeast-1:${data.aws_caller_identity.self.account_id}:domain/glaciermelt-opensearch/*"
     ]
   }
 }
@@ -73,5 +66,5 @@ resource aws_iam_service_linked_role opensearch {
 }
 
 resource aws_cloudwatch_log_group opensearch {
-  name = "/ecs/agent-one-opensearch"
+  name = "/ecs/glaciermtl-opensearch"
 }

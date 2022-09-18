@@ -1,10 +1,3 @@
-/*
- * Copyright SecondGame All Rights Reserved.
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
- */
-
 resource aws_lambda_function opensearch_updates {
   function_name    = var.lambda_function_name
   filename         = data.archive_file.function_source.output_path

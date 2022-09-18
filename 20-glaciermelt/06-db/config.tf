@@ -1,19 +1,14 @@
-/*
- * Copyright SecondGame All Rights Reserved.
- *
- * For the full copyright and license information,
- * please view the LICENSE file that was distributed with this source code.
- */
-
 terraform {
-  required_version = ">= 0.12"
+  required_version = ">= 0.12, <= 0.13.6"
 
   # State Storage and Locking
   backend s3 {
     region         = "ap-northeast-1"
-    bucket         = "terraform-498049530403.secondgame.net"
+    bucket         = "terraform-814937260541.glaciermelt00"
     key            = "db"
     dynamodb_table = "terraform_lock"
+    shared_credentials_file = "$HOME/.aws/credentials"
+    profile                 = "glaciermelt00"
   }
 }
 
@@ -24,6 +19,8 @@ module global_network {
 provider aws {
   version = "3.24.1"
   region  = "ap-northeast-1"
+  shared_credentials_file = "$HOME/.aws/credentials"
+  profile                 = "glaciermelt00"
 }
 
 provider aws {
