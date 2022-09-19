@@ -12,6 +12,9 @@ resource aws_rds_cluster main {
   backtrack_window                = 259200
   preferred_backup_window         = "16:10-16:40"
   preferred_maintenance_window    = "sun:17:10-sun:17:40"
+  iam_roles                       = [
+    "arn:aws:iam::814937260541:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS"
+  ]
   enabled_cloudwatch_logs_exports = [ "audit", "error", "slowquery" ]
   storage_encrypted               = true
   deletion_protection             = true
