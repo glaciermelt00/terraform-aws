@@ -1,8 +1,8 @@
 # config file containing credentials for RDS MySQL instance
-DB_HOST = "main.cluster-ro-cveypjlwz3rc.ap-northeast-1.rds.amazonaws.com"
-DB_USER = "secondgame"
-DB_PASS = "5HBtdCU6UXPL"
-DB_NAME = "agent_one"
+DB_HOST = "main.cluster-ro-caopglrgm7fc.ap-northeast-1.rds.amazonaws.com"
+DB_USER = "glaciermelt00"
+DB_PASS = "WNHRUEL4QS6D"
+DB_NAME = "glaciermelt"
 
 DB_ARGS = {
     "host":            DB_HOST,
@@ -11,7 +11,6 @@ DB_ARGS = {
     "database":        DB_NAME,
     "autocommit":      True,
     "connect_timeout": 5,
-    "cursorclass":     cursors.DictCursor,
 }
 
 # Elasticsearch setting

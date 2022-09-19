@@ -7,7 +7,7 @@ resource aws_rds_cluster main {
   engine_version                  = "5.7.mysql_aurora.2.07.3"
   database_name                   = "glaciermelt"
   master_username                 = "glaciermelt00"
-  master_password                 = "5HBtdCU6UXPL"
+  master_password                 = "WNHRUEL4QS6D"
   backup_retention_period         = 35
   backtrack_window                = 259200
   preferred_backup_window         = "16:10-16:40"

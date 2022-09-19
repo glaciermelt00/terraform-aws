@@ -4,17 +4,18 @@ import rds_config
 import sys
 
 from opensearchpy import OpenSearch
-from pymysql      import connect, cursors
+from pymysql      import connect, cursors, MySQLError
 
 
 # config file containing credentials for RDS MySQL instance
-DB_ARGS = rds_config.DB_ARGS
+DB_ARGS                = rds_config.DB_ARGS
+DB_ARGS["cursorclass"] = cursors.DictCursor
 
 # SQL
 select_sql = rds_config.select_sql
 
 # Opensearch settings
-HOST   = "https://vpc-agent-one-opensearch-kcgiagmcufusp4r446yv2du5aq.ap-northeast-1.es.amazonaws.com"
+HOST   = "https://vpc-glaciermelt-opensearch-jnjn5m4vcddhpjwxfivz3vo5iy.ap-northeast-1.es.amazonaws.com"
 REGION = "ap-northeast-1"
 
 # Mapping and setting definition
@@ -27,7 +28,7 @@ logger.setLevel(logging.INFO)
 
 try:
     connection = connect(**DB_ARGS)
-except pymysql.MySQLError as e:
+except MySQLError as e:
     logger.error("ERROR: Unexpected error: Could not connect to MySQL instance.")
     logger.error(e)
     sys.exit()
