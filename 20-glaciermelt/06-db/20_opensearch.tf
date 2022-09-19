@@ -13,7 +13,6 @@ resource aws_elasticsearch_domain opensearch {
       data.terraform_remote_state.network.outputs.subnet_private_1
     ]
     security_group_ids = [
-      data.terraform_remote_state.network.outputs.security_group_www,
       data.terraform_remote_state.network.outputs.security_group_default
     ]
   }

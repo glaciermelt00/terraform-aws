@@ -2,9 +2,9 @@ resource aws_lambda_function opensearch_updates {
   function_name    = var.lambda_function_name
   filename         = data.archive_file.function_source.output_path
   source_code_hash = data.archive_file.function_source.output_base64sha256
-  role             = aws_iam_role.iam_for_lambda.arn
+  role             = data.terraform_remote_state.iam_role.outputs.lambda_arn
   handler          = "opensearch_updates_lambda_function.handler"
-  runtime          = "python3.9"
+  runtime          = "python3.8"
   depends_on       = [
     aws_cloudwatch_log_group.lambda_log_group,
     aws_iam_role_policy_attachment.lambda_logs,
@@ -29,7 +29,7 @@ resource aws_cloudwatch_log_group lambda_log_group {
 
 
 resource aws_iam_role_policy_attachment lambda_logs {
-  role       = aws_iam_role.lambda.name
+  role       = data.terraform_remote_state.iam_role.outputs.lambda_name
   policy_arn = aws_iam_policy.lambda_logging.arn
 }
 

@@ -10,6 +10,10 @@ output rds_monitoring {
   value = aws_iam_role.rds_monitoring.arn
 }
 
-output lambda {
+output lambda_arn {
   value = aws_iam_role.lambda.arn
+}
+
+output lambda_name {
+  value = aws_iam_role.lambda.name
 }
