@@ -22,25 +22,6 @@ data archive_file function_source {
 }
 
 
-resource aws_iam_role lambda {
-  name               = "LambdaRole"
-  assume_role_policy = data.aws_iam_policy_document.lambda_assume.json
-}
-
-data aws_iam_policy_document lambda_assume {
-  statement {
-    effect  =   "Allow"
-    actions = [ "sts:AssumeRole" ]
-    principal {
-      service = "lambda.amazonaws.com"
-    }
-  }
-}
-
-
-# TODO: opensearch_updates_lambda_function.py ファイルに、 handler 関数を作る
-
-
 resource aws_cloudwatch_log_group lambda_log_group {
   name              = "/aws/lambda/${var.lambda_function_name}"
   retention_in_days = 14
