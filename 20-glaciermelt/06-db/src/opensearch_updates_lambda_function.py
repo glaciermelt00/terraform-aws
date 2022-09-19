@@ -95,10 +95,10 @@ def execute_rds(new_index_name):
             temp_doc["county"] = row["None"]
             temp_doc["town"]   = row["None"]
             doc = temp_doc
-        elif has_parent(!row["geo_location1"]):
+        elif has_parent(row["geo_location1"]) == false:
             doc = get_location(row["geo_location1"], temp_doc)
         else:
-            if has_parent(!row["geo_location2"]):
+            if has_parent(row["geo_location2"]) == false:
                 doc = get_location(row["geo_location2"], temp_doc)
             else:
                 doc = get_location(row["geo_location3"], temp_doc)
