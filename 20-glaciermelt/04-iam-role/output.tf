@@ -9,3 +9,7 @@ output ec2_common_profile {
 output rds_monitoring {
   value = aws_iam_role.rds_monitoring.arn
 }
+
+output lambda {
+  value = aws_iam_role.lambda.arn
+}
