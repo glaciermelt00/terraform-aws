@@ -7,7 +7,7 @@ resource aws_instance gateway1 {
   ebs_optimized               = false
   instance_type               = "t2.nano"
   monitoring                  = false
-  key_name                    = ""
+  key_name                    = aws_key_pair.gateway1.id
   subnet_id                   = aws_subnet.global_1.id
   vpc_security_group_ids      = [ aws_security_group.default.id ]
   iam_instance_profile        = data.terraform_remote_state.iam_role.outputs.ec2_common_profile
@@ -22,4 +22,12 @@ resource aws_instance gateway1 {
   tags = {
     "Name" = "gs1.glacirmelt.internal"
   }
+}
+
+/**
+ * Key pair
+ */
+resource aws_key_pair gateway1 {
+  key_name   = "gateway1"
+  public_key = file("~/.ssh/id_rsa.pub")
 }
