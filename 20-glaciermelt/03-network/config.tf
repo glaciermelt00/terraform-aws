@@ -7,7 +7,7 @@ terraform {
     bucket         = "terraform-814937260541.glaciermelt00"
     key            = "network"
     dynamodb_table = "terraform_lock"
-    shared_credentials_file = "$HOME/.aws/credentials"
+    shared_credentials_file = "~/.aws/credentials"
     profile                 = "glaciermelt00"
   }
 }
@@ -19,7 +19,7 @@ module global_network {
 provider aws {
   version = "3.24.1"
   region  = "ap-northeast-1"
-  shared_credentials_file = "$HOME/.aws/credentials"
+  shared_credentials_file = "~/.aws/credentials"
   profile                 = "glaciermelt00"
 }
 
